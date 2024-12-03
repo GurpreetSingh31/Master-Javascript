@@ -1,0 +1,6 @@
+.wrap {
+    width: 80%;
+    height: 400px ;
+background:linear-gradient(to right , red , black , green );
+    filter: blur(20px);
+  }

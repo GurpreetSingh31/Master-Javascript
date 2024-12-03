@@ -1,0 +1,199 @@
+getElementById
+
+document.getElementById('title').id
+
+> document.getElementById('title').className
+< "heading"
+
+
+> document.getElementById('title').getAttribute('id')
+< "title"
+
+
+> document.getElementById('title').getAttribute('class')
+< "heading" 
+
+
+document.getElementById('title').setAttribute('class','test')  it overwrite so please remember
+that give test heading
+
+
+// storing this in a variable
+> const title = document.getElementById('title')
+< undefined
+
+
+title.style.backgroundColor = 'red'
+
+> title.style.borderRadius = "12px" 
+< "12px"
+> title.style.backgroundColor = 'red' 
+< "red"
+
+// accessing the content form variable
+
+
+> title.textContent 
+< "Dom Learning on Chai Aur Code"
+> title.innerHTML
+< "Dom Learning on Chai Aur Code"
+
+> title.innerText
+< "Dom Learning on Chai Aur Code"
+
+// Difference  between .textContent and .innertext
+
+1. so .innerText it show that is visible and .textContent only show that content thtat is not visible 
+example - 
+> title.innerText
+< "Dom Learning on Chai Aur Code"
+> title.textContent
+< "Dom Learning on Chai Aur Code not visible text 
+         "
+> title.innerHTML
+< "Dom Learning on Chai Aur Code <span style=\"display: none;\">not visible text </span>
+         "
+// Query Selector
+
+> document.querySelector('h1') // it give first h1 
+< <h1 id="title" class="heading">…</h1>
+
+> document.querySelector('#box')
+< <div class="container" id="box">…</div>
+
+> document.querySelector('input[type="password"]')
+< <input type="password" id="pas">
+
+> document.querySelector('ul')
+< <ul>…</ul>
+> const myUl = document.querySelector('ul')
+< undefined
+> myUl.querySelector('li')
+< <li>one</li>
+> myUl.querySelector('li')
+< <li>one</li>
+> const myFirstLi = myUl.querySelector('li')
+< undefined
+> myFirstLi.stye
+< undefined
+> myFirstLi.style.backgroundColor = "green"
+< "green"
+
+//querySelectorAll :- it return the  array but not pure array
+
+
+// point to remember is NodeList is an Array right but not pure but it have some of the property 
+
+> document.querySelectorAll('li')
+< NodeList (3) = $2 // this come in array but this not pure array because .map is absent and alot more
+0 
+<li>one</li>
+1 
+<li>Two</li>
+2 
+<li>Three</li>
+
+NodeList Prototype
+constructor: function()
+entries()
+forEach()
+item(index)
+keys()
+length
+values()
+Symbol(Symbol.iterator)()
+Symbol(Symbol.toStringTag): "NodeList"
+Object Prototype
+
+// showing error while performing the same thing in this because it selects the all elements 
+> liArr.style.backgroundColor = "blue"
+< TypeError: undefined is not an object (evaluating 'liArr.style.backgroundColor = "blue"')
+
+// to do above thing i need
+> liArr[0].style.backgroundColor = "blue"
+< "blue"
+
+
+// one more example of querySelectorAll
+> document.querySelectorAll('h1')
+< NodeList (4) = $1
+0 
+<h1 id="title" class="heading">
+"Dom Learning on Chai Aur Code "
+<span style="display: none;">not visible text </span>
+</h1>
+1 
+<h1>Lorem, ipsum dolor.</h1>
+2 
+<h1>Lorem, ipsum dolor.</h1>
+3 
+<h1>Lorem, ipsum dolor.</h1>
+
+NodeList Prototype
+
+> const allh1 = document.querySelectorAll('h1')
+< undefined
+> allh1[0].style.color = 'yellow'
+< "yellow"
+
+// forEach()
+ > const li = document.querySelectorAll('li')
+< undefined
+> li
+< NodeList (3) = $3
+0 
+<li>one</li>
+1 
+<li>Two</li>
+2 
+<li>Three</li>
+
+NodeList Prototype
+
+> li.forEach(function(l) {
+l.style.backgroundColor = "green"
+} )
+
+// HTML Collection
+> document.getElementsByClassName('list-item') 
+< HTMLCollection (4) = $1
+0 
+<li class="list-item">one</li>
+1 
+<li class="list-item">Two</li>
+2 
+<li class="list-item">Three</li>
+3 
+<li class="list-item">four</li>
+
+HTMLCollection Prototype // isme koi array attribute nhi hai (for example :- .map , .reduce , .foreach )
+> li.forEach(function(l){
+l.style.backgroundColor = "green"
+}) // So Applying the for each it is showing error
+< TypeError: li.forEach is not a function. (In 'li.forEach(function(l){
+l.style.backgroundColor = "green"
+})', 'li.forEach' is undefined)  
+
+
+// conversion of HTMLCollection to Array 
+
+> const li = document.getElementsByClassName('list-item') 
+< undefined
+> li
+< HTMLCollection [<li class="list-item">, <li class="list-item">, <li class="list-item">, <li class="list-item">] (4)
+> Array.from(li)
+< [<li class="list-item">, <li class="list-item">, <li class="list-item">, <li class="list-item">] (4)
+
+//  Stroring this array in a variable
+
+>  const myArr = Array.from(li)
+< undefined
+> myArr.forEach((item) => console.log(item) )
+[Log] <li class="list-item">one</li>
+
+[Log] <li class="list-item">Two</li>
+
+[Log] <li class="list-item">Three</li>
+
+[Log] <li class="list-item">four</li>
+

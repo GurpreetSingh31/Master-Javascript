@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        .button{
+            margin: 2px;
+            border: 1.5px solid black;
+            border-radius: 8px;
+
+        };
+        #green{
+                background-color: green;
+        }
+        #orange{
+            background-color: orange;
+        };
+        #red{
+            background-color: red;
+        };
+        #black{
+            background-color: black;
+        };
+        #blue{}
+    </style>
+</head>
+<body>
+    <button  class="button" id="green">Greeen</button>
+    <button  class="button" id="orange">Orange</button>
+    <button  class="button" id="red">red</button>
+    <button  class="button" id="black">black</button>
+    <button  class="button" id="blue">blue</button>
+</body>
+
+<script>
+// example of Clousers
+
+
+    const body = document.querySelector('body')
+
+    //without using the clousers 
+    document.querySelector('#green').addEventListener('click' , function(){
+        body.style.backgroundColor = "green"
+    })
+
+    document.querySelector('#blue').addEventListener('click' , function(){
+        body.style.backgroundColor = "blue"
+    })
+
+   // if i want this thing 500 times so do it in this way 
+// with help of clousers 
+   function clickHandler(color){
+    // Closures     
+    return function(){
+        document.body.style.backgroundColor = `${color}`
+    }
+   }
+
+   document.querySelector('#orange').addEventListener('click' , clickHandler("orange"))
+   document.querySelector('#red').addEventListener('click' , clickHandler("red"))
+   document.querySelector('#black').addEventListener('click' , clickHandler("black"))
+
+
+</script>
+</html>  
+
+
+
+

@@ -1,0 +1,42 @@
+//  you can check the api by :-  api.github.com/users/gurpreetsingh31
+// randomuser.me 
+
+// phele ke time mai fetch() ke aane se phele AJAX use krte the api 
+
+
+// Study ajax on mdn but it is outdated   
+
+
+<!DOCTYPE html>
+<html lang="en"> 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+const url = 'https://api.github.com/users/gurpreetsingh31'
+const xhr = new XMLHttpRequest()
+xhr.open('GET', url)
+xhr.onreadystatechange = function(){
+    console.log(xhr.readyState);
+    if(xhr.readyState === 4){
+        const data = JSON.parse(this.responseText) // converting string into object 
+        console.log(data);
+    
+        console.log(typeof data); // it is coming undefined  becauese if you check the datatype of it is string 
+        console.log(data.name); // it is coming undefined  becauese if you check the datatype of it is string 
+        console.log(data.following); // it is coming undefined  becauese if you check the datatype of it is string 
+        // we have to convert the string to object
+
+    }
+}
+
+xhr.send()
+
+
+</script>
+</html>

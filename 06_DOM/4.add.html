@@ -1,0 +1,76 @@
+// Adding and Removing the elements
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul class="language">
+        <li>javascript</li>
+        
+    </ul>
+</body>
+<script> // adding  language with function
+    function addlanguage (langName){
+   const list_item = document.createElement('li') 
+   list_item.innerText = langName;
+   
+const langVal = document.querySelector('.language')
+langVal.appendChild(list_item)
+
+    }
+
+    addlanguage("python")
+    addlanguage("typescript")
+
+    // the above method is good but not optimise 
+
+    // the good method is :- 
+
+        function optimiseApproach(langName) {
+        const li = document.createElement('li')
+
+        // adding the lang to li 
+        li.appendChild( document.createTextNode(langName))
+
+        // attaching the li to ul.language
+
+       /*  const newLang = document.querySelector('.language')
+        newLang.appendChild(li) */
+// or 
+document.querySelector('.language').appendChild(li)
+        }
+optimiseApproach("Swift")
+optimiseApproach("Go Lang")
+optimiseApproach("Rust")
+
+// Editing the Content in li
+
+const editText = document.querySelector("li:nth-child(2)") 
+// editText.innerHTML = "Mojo" // not optimise value
+// second approach
+
+const newli = document.createElement('li')
+
+//   editText.appendChild( document.createTextNode("Mojo")) :- iss se replace nhi ho rha
+newli.textContent = "mojo"
+editText.replaceWith(newli)
+
+// another example of editing
+
+const editText1 = document.querySelector("li:nth-child(1)")
+const addText2 = document.createElement('li')
+addText2.innerHTML = "Hanji Sir"
+editText1.replaceWith(addText2)
+
+// Now removing the 
+const removeLang = document.querySelector('li:last-child')
+removeLang.remove()
+
+
+
+</script>
+</html>

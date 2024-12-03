@@ -1,0 +1,51 @@
+<!-- Learning of Assignment 
+1. How to pass an external functino(a callback funciton) into it 
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hello Ji Ki Hall Chall Hopefully you doning great </h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</body>
+<script>
+
+    // intialising a function that print "preet"
+const JustStart = function(){
+    console.log("preet" , Date.now());
+    
+}
+
+let interValid
+// selecting a start button > adding eventlistner(click) > in function > we starting setinterval
+
+const setInt = function (){ 
+    interValid = setInterval(JustStart , 2000)   }
+
+    const StopIt = function(){
+        clearInterval(interValid);
+    }
+
+document.querySelector('#start').addEventListener('click' , function (){
+    console.log("Started");   
+    setInt();  // biggest learning that how to pass function as argument into a another function 
+})
+
+
+document.querySelector('#stop').addEventListener( 'click',   function() {
+StopIt()
+console.log("stopped");
+   
+})
+
+
+
+</script>
+</html>

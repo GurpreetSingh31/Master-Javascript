@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hello World</h1>
+    <button id="Stop">Stop</button>
+</body>
+
+<script>
+
+  /*   setTimeout(() => {
+        
+    }, timeout); */
+
+// Handler means function without a name
+
+//Way - 1
+        setTimeout(function () {
+        // console.log("Preet");
+        
+    }, 2000) // 2 second ke baad preet print hojayga
+
+//way-2
+const prntWaheguru = function(){
+    // console.log("Waheguru");
+}
+
+setTimeout(prntWaheguru , 2000)
+
+// Now changing the h1
+
+const h1 = document.querySelector('h1')
+console.log(h1);
+
+const changeH1 = function(){
+    h1.innerHTML = "World's Best Playlist is Chai aur code "
+}
+
+const changeME = setTimeout(changeH1 , 2000)
+
+// how to stop the change text before 2 second 
+
+document.querySelector('#Stop').addEventListener('click' ,function (){
+    clearTimeout(changeME)
+console.log('Sttoped');
+
+})
+
+
+</script>
+</html>

@@ -1,0 +1,121 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+}
+
+
+
+.container{
+    width: 100% ;
+    min-height: 100vh;
+  background:linear-gradient(135deg , #153577 , #4e085f);
+  padding: 10px;
+ 
+}
+.to-do{
+    max-width: 550px;
+
+    background-color: #fff;
+    border-radius: 15px ;
+    margin: 90px  auto 100px ;
+    padding: 10px;
+   
+}
+
+.to-do h2{
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    padding-left: 20px ;  color: #002765;
+}
+.to-do h2 img{
+     width: 53px;
+     padding: 10px;
+}
+.row{
+display: flex;
+align-items: center;
+justify-content: center;
+background: #edeef0 ;
+border-radius: 30px ;
+padding-left: 20px ;
+margin-bottom: 25px ;
+}
+input{
+    flex: 1 ;
+    outline: none;
+    border: none;
+    background:transparent;
+    padding: 10px ;
+}
+.add_but{
+    outline: none;
+    border: none;
+background:linear-gradient(135deg , #ff5945 ,#fff);
+    /* background-color:#ff5945; */
+    border-radius: 25px;
+    font-weight: 700px;
+    padding: 16px 35px ;
+    color: hsl(0, 0%, 10%);
+    font-size: 14px;
+    cursor: pointer;
+}
+
+ul li {
+    list-style: none;
+    font-size: 17px;
+    padding: 12px  8px 12px 50px ;
+    user-select: none;
+    cursor:pointer;
+    position: relative;
+}
+
+ul li::before{
+    content: ' ';
+    position: absolute;
+    height: 21px;
+    width: 20px ;
+    border-radius: 10px ;
+    background-image: url('../Assests/1.png');
+    background-size: cover;
+    background-position: center;
+    top:12px;
+    left: 14px ;
+    
+
+
+}
+
+ul .checked{
+   color: #555; 
+    text-decoration: line-through;
+}
+
+ul .checked::before{
+background-image: url("done.png");
+width: 20px ;
+height: 20px;
+position: absolute;
+}
+
+
+ul li span{
+position: absolute;
+right: 0px;
+width: 40px ;
+height: 40px ;
+
+top: 5px ;
+font-size: 22px ;
+color: #555;
+line-height: 40px;
+text-align: center;
+}
+ul li span:hover{
+    background-color: rgb(209, 203, 193);
+    border-radius: 20px ;
+}

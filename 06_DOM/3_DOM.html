@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DoM manipulationg</title>
+</head>
+<body>
+    <div class="parent">
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+    </div>
+
+
+
+
+    <script>
+      /*   const storedVal = document.getElementsByClassName('day')
+        console.log(storedVal);
+ */
+/* 
+ const storedVal = document.querySelector('.day')
+ console.log(storedVal); */
+
+
+ // Creating New Element
+ const div1 = document.createElement('div');
+ console.log(div1);
+ // Creating a class and id 
+ div1.className = 'main'/* div1.id = "myID"  */
+ div1.id = Math.round(Math.random()*10+1);
+ 
+ // adding attribute
+ div1.setAttribute("title" , "Dom Manipulation Title")
+ 
+ // adding style
+ div1.style.backgroundColor = "green" // abhi tak page pr nhi aaya 
+ 
+
+ // adding inner text 
+ div1.innerText = "Preet Singh " // this not a good practices 
+ 
+
+ // so the best practices is 
+ const addText = document.createTextNode("This is  a good practice to add a text")
+    div1.appendChild(addText) // Attaching
+
+    //Attaching Script with HTMl(DOM)
+document.body.appendChild(div1)
+
+
+    </script>
+</body>
+</html>
