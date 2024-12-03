@@ -16,7 +16,8 @@ Node.js was created by Ryan Dahl in 2009. It has since evolved into a powerful t
 ## Setting Up Your Development Environment
 
 ### Downloading Node.js
-To get started with Node.js, you need to download and install it on your machine.
+To get started with Node.js, you need to download and install it on your machine.Node.js is a runtime enviornment which allow your Javascript code can directly run on your machine, now a days many options are available in the market like deno , bun and you can feel free to download those options 
+but the traditional way is node.js , in this repo both option is discussed
 
 #### For macOS:
 1. Visit the [Node.js official website](https://nodejs.org/).
