@@ -88,7 +88,7 @@ Note: Make sure you have Homebrew installed before running these commands. To in
 ## Let's Start Learning!
 Now that you have your development environment set up, it's time to dive into JavaScript basics. 
 
-👉 [Continue to JavaScript Basics](../01_Basics/)
+👉 [Continue to JavaScript Basics](./01_Basics/)
 
 ## Conclusion
 By setting up Node.js and choosing the right tools, you're well on your way to becoming proficient in JavaScript. Happy coding!
